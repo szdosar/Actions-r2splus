@@ -112,7 +112,7 @@ jobs:
         cd openwrt
         echo -e "$(nproc) thread compile"
         bash <(curl -Ls https://raw.githubusercontent.com/szdosar/ish/refs/heads/master/fix_singbox_init.sh)
-        bash <(curl -Ls https://raw.githubusercontent.com/szdosar/ish/refs/heads/master/fix_luci-app-adguardhome_for_lede.sh)
+        bash <(curl -Ls https://raw.githubusercontent.com/szdosar/ish/refs/heads/master/fix_luci-app-adguardhome_for_immortalwrt.sh)
         make -j$(nproc)
         echo "status=success" >> $GITHUB_OUTPUT
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
